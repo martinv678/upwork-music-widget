@@ -1,5 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 import theme from "../../theme";
+
+const propTypes = {
+  album: PropTypes.shape({
+    album: PropTypes.string,
+    tracks: PropTypes.arrayOf(
+      PropTypes.shape({
+        artist: PropTypes.string,
+        title: PropTypes.string,
+        track: PropTypes.shape({
+          no: PropTypes.number
+        })
+      })
+    )
+  })
+};
 
 const styles = {
   root: {
@@ -53,3 +69,5 @@ export function AlbumView({ album }) {
     </div>
   );
 }
+
+AlbumView.propTypes = propTypes;

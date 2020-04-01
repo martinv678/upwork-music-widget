@@ -23,9 +23,7 @@ export function sortTracksToAlbums(arr, file) {
 export function sortTracks(album) {
   return {
     ...album,
-    tracks: album.tracks.sort((a, b) => {
-      return a.track.no - b.track.no;
-    }),
+    tracks: album.tracks.sort((a, b) => a.track.no - b.track.no),
   }
 }
 

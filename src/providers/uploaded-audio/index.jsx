@@ -54,9 +54,9 @@ export function useOnAudioFileUpload() {
   return async function uploadAudio(event) {
     dispatch({ type: TYPES.FETCH_RESULTS });
 
-    const promises = Array.from(event.target.files).map(file => {
-      return mmb.parseBlob(file, { native: true });
-    });
+    const promises = Array.from(event.target.files).map(file =>
+      mmb.parseBlob(file, { native: true })
+    );
 
     try {
       const results = await Promise.all(promises);

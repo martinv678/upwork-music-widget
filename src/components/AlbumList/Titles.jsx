@@ -1,5 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import theme from "../../theme";
+
+const propTypes = {
+  titles: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onTitleClick: PropTypes.func.isRequired,
+  selected: PropTypes.string.isRequired
+};
 
 const styles = {
   root: {
@@ -16,7 +23,7 @@ const styles = {
     border: "none",
     borderRight: "2px solid black",
     width: "100%",
-    fontFamily: `"Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif`,
+    fontFamily: theme.fonts.main,
     textAlign: "left",
     fontSize: 14,
     outline: "none",
@@ -58,3 +65,5 @@ export function Titles({ titles, onTitleClick, selected }) {
     </div>
   );
 }
+
+Titles.propTypes = propTypes;
